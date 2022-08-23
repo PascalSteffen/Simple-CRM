@@ -1,0 +1,59 @@
+.btn-position {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+}
+
+mat-card {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.user-table {
+    width: 100%;
+    text-align: start;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+        &:last-child {
+            border: 0;
+        }
+
+        cursor: pointer;
+
+        &:first-child {
+            cursor: unset;
+
+            &:hover {
+                background-color: unset;
+            }
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    td {
+        height: 48px;
+
+        &:first-child {
+            padding-left: 16px;
+        }
+    }
+
+    th {
+        text-align: start;
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 16px;
+        padding-bottom: 16px;
+
+        &:first-child {
+            padding-left: 16px;
+        }
+    }
+
+}

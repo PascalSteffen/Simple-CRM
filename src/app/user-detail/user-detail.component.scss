@@ -1,0 +1,26 @@
+.detail-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    min-height: 100px;
+    background-color: lightgray;
+
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+    }
+}
+
+.user-datails {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 16px;
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
