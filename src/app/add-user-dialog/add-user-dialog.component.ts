@@ -29,14 +29,13 @@ export class AddUserDialogComponent implements OnInit {
    * 
    */
   saveUser() {
+    this.loading = true;
     this.user.birthday = this.birthDate.getTime();
     const coll = collection(this.firestore, 'users');
-    addDoc(coll, { user: this.user.toJSON() });
-    this.loading = true;
-    setTimeout(() => {
+    addDoc(coll, { user: this.user.toJSON() }).then(() => {
       this.loading = false;
       this.dialogRef.close();
-    }, 2000);
+    });
   }
 
 }

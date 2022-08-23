@@ -10,3 +10,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mt-32px {
     margin-top: 32px;
 }
+
+.full-width {
+    width: 100%;
+}
+
+.dialog-cointainer {
+    position: relative;
+}
+
+.progressbar-container {
+    position: absolute;
+    bottom: 0;
+    right: -24px;
+    left: -24px;
+    margin: 0;
+    padding: 0;
+}
