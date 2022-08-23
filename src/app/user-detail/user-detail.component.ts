@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { collectionData, Firestore, doc, getDoc } from '@angular/fire/firestore';
+import { Firestore, doc, getDoc } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
 import { collection } from '@firebase/firestore';
-import { map, Observable } from 'rxjs';
-import { User } from 'src/models/user.class';
 
 
 @Component({
@@ -12,35 +10,24 @@ import { User } from 'src/models/user.class';
   styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent implements OnInit {
-  users$: Observable<any>;
-  user = {};
+  users = {};
   userId: any;
   constructor(private route: ActivatedRoute, private firestore: Firestore) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(paramMap => {
+    this.route.paramMap.subscribe(async (paramMap) => {
       this.userId = paramMap.get('id');
-      console.log(this.userId);
-      this.getUser();
-
+      await this.getUser();
     })
   }
 
-  getUser() {
+
+  async getUser() {
     const coll = collection(this.firestore, 'users');
-/*     const docRef = doc(coll, this.userId); */
-    this.users$ = collectionData(coll, );
-    this.users$.subscribe((newUser) => {
-      this.user = newUser;
-      console.log(this.user);
-      // console.log(this.allUsers);
-    })
-
-
-/*     getDoc(docRef).then((user: any) => {
-      this.user = user;
-      console.log(this.user);
-    }); */
+    const docRef = doc(coll, this.userId);
+    const docSnap = await getDoc(docRef);
+    this.users = docSnap.data();
+    console.log(this.users);
   }
 
 }
