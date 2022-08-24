@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Firestore } from '@angular/fire/firestore';
+import { collection, doc, Firestore, updateDoc } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
-import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
+import { EditUserDialogComponent } from "../edit-user-dialog/edit-user-dialog.component";
 
 @Component({
   selector: 'app-edit-user-header-dialog',
@@ -14,14 +14,26 @@ export class EditUserHeaderDialogComponent implements OnInit {
   loading = false;
   user: User = new User();
   userId: string;
-  
+
   constructor(private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) { }
 
+  
   ngOnInit(): void {
   }
 
-  updateUser() {
 
+  /**
+   * update the Userinformation.
+   * 
+   */
+  async updateUser() {
+    this.loading = true;
+    const coll = collection(this.firestore, 'users');
+    const docRef = doc(coll, this.userId);
+    await updateDoc(docRef, { user: this.user.toJSON() }).then(() => {
+      this.loading = false;
+      this.dialogRef.close();
+    });
   }
-
+  
 }

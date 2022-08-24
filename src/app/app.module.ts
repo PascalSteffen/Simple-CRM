@@ -28,6 +28,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { EditUserDialogComponent } from './edit-user-dialog/edit-user-dialog.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { EditUserHeaderDialogComponent } from './edit-user-header-dialog/edit-user-header-dialog.component';
+import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditUserHeaderDialogComponent } from './edit-user-header-dialog/edit-us
     AddUserDialogComponent,
     UserDetailComponent,
     EditUserDialogComponent,
-    EditUserHeaderDialogComponent
+    EditUserHeaderDialogComponent,
+    DeleteUserDialogComponent
   ],
   imports: [
     BrowserModule,

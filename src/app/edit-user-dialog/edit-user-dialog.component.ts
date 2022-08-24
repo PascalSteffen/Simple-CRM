@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { collection, doc, Firestore, updateDoc } from '@angular/fire/firestore';
+import { collection, doc, Firestore, getDoc, onSnapshot, updateDoc } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/models/user.class';
 
 @Component({
@@ -13,13 +14,17 @@ export class EditUserDialogComponent implements OnInit {
   user: User = new User();
   userId: string;
 
-  constructor(private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) { }
+  constructor(private route: ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) { }
 
-  ngOnInit(): void {
+  
+  ngOnInit() {
 
   }
 
-
+  /**
+   * update the Userinformation.
+   * 
+   */
   async updateUser() {
     this.loading = true;
     const coll = collection(this.firestore, 'users');

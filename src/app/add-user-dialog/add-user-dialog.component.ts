@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/models/user.class';
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
+import { Firestore, collection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { addDoc } from '@firebase/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-user-dialog',
@@ -15,14 +16,12 @@ export class AddUserDialogComponent implements OnInit {
   user = new User();
   birthDate: Date;
   users$: Observable<any>;
-  constructor(private firestore: Firestore, public dialogRef: MatDialogRef<AddUserDialogComponent>) {
-    const coll = collection(firestore, 'items');
-    this.users$ = collectionData(coll, { idField: "usersId" });
-  }
+  constructor(private firestore: Firestore, public dialogRef: MatDialogRef<AddUserDialogComponent>) { }
 
 
   ngOnInit(): void {
   }
+
 
   /**
    * save a new User to the DB.

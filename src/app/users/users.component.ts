@@ -30,10 +30,7 @@ export class UsersComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(AddUserDialogComponent, {
-    });
-
-    dialogRef.afterClosed();
+    this.dialog.open(AddUserDialogComponent);
   }
 
 }
