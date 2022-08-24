@@ -10,7 +10,7 @@ import { User } from 'src/models/user.class';
 })
 export class EditUserDialogComponent implements OnInit {
   loading = false;
-  user: User;
+  user: User = new User();
   userId: string;
 
   constructor(private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) { }

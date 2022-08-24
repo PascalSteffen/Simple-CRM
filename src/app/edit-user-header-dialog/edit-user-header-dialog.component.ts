@@ -12,7 +12,7 @@ import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.co
 
 export class EditUserHeaderDialogComponent implements OnInit {
   loading = false;
-  user: User;
+  user: User = new User();
   userId: string;
   
   constructor(private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) { }
