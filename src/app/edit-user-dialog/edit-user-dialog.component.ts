@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { collection, doc, Firestore, getDoc, onSnapshot, updateDoc } from '@angular/fire/firestore';
+import { collection, doc, Firestore, updateDoc } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/models/user.class';
@@ -13,9 +13,8 @@ export class EditUserDialogComponent implements OnInit {
   loading = false;
   user: User = new User();
   userId: string;
-
-  constructor(private route: ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) { }
-
+  constructor( private route: ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) {
+   }
   
   ngOnInit() {
 

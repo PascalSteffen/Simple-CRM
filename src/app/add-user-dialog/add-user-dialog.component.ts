@@ -4,7 +4,6 @@ import { Firestore, collection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { addDoc } from '@firebase/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-user-dialog',

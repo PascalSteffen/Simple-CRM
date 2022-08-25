@@ -29,6 +29,7 @@ import { EditUserDialogComponent } from './edit-user-dialog/edit-user-dialog.com
 import { MatMenuModule } from '@angular/material/menu';
 import { EditUserHeaderDialogComponent } from './edit-user-header-dialog/edit-user-header-dialog.component';
 import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dial
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     MatMenuModule,
     MatCardModule,
     MatProgressBarModule,
@@ -61,7 +63,7 @@ import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dial
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]
