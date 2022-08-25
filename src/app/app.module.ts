@@ -31,6 +31,7 @@ import { EditUserHeaderDialogComponent } from './edit-user-header-dialog/edit-us
 import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserDetailComponent,
     EditUserDialogComponent,
     EditUserHeaderDialogComponent,
-    DeleteUserDialogComponent
+    DeleteUserDialogComponent,
   ],
   imports: [
     BrowserModule,
