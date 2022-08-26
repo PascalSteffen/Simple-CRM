@@ -58,3 +58,31 @@ mat-card {
     }
 
 }
+
+
+
+@media(min-width: 601px) {
+    .responsive-table {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .desktop-table {
+        display: none;
+    }
+
+    .user-table {
+
+        th {
+            padding: 0 16px !important;
+        }
+
+        td {
+            word-break: break-all;
+            padding-right: 16px;
+        }
+
+    }
+    
+}

@@ -6,10 +6,12 @@
             <button (click)="deleteUserDialog()" mat-menu-item>Delete User</button>
           </mat-menu>
     </button>
-    <img src="../../assets/img/profil-placeholder.png" alt="">
-    <div class="user-datails">
-        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
-        <span>{{ user.email }}</span>
+    <div class="user-detail-header-container">
+        <img src="../../assets/img/profil-placeholder.png" alt="">
+        <div class="user-datails">
+            <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+            <span>{{ user.email }}</span>
+        </div>
     </div>
 </mat-card>
 

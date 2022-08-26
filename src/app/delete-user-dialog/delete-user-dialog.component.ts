@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { collection, deleteDoc, doc, Firestore } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-delete-user-dialog',
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DeleteUserDialogComponent implements OnInit {
   userId: any;
   loading = false;
-  constructor(private route: ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<DeleteUserDialogComponent>) { }
+  constructor(public router: Router, private route: ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<DeleteUserDialogComponent>) { }
 
   ngOnInit(): void {
 
@@ -19,11 +19,11 @@ export class DeleteUserDialogComponent implements OnInit {
 
 
   async deleteUser() {
-    window.location.pathname = '/users';
     this.loading = true;
     const coll = collection(this.firestore, 'users');
     const docRef = doc(coll, this.userId);
     await deleteDoc(docRef).then(() => {
+      this.router.navigate(['users']);
       this.loading = false;
       this.dialogRef.close();
     });

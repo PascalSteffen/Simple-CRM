@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="desktop-table">
   <table class="user-table">
     <tr>
       <th>Name</th>
@@ -8,6 +8,23 @@
     <tr *ngFor="let user of allUsers" [routerLink]="user.userId">
       <td>{{ user['user'].firstName }} {{ user['user'].lastName }}</td>
       <td>{{ user['user'].email }}</td>
+      <td>{{ user['user'].city }}</td>
+    </tr>
+  </table>
+</mat-card>
+
+<mat-card *ngFor="let user of allUsers" [routerLink]="user.userId" class="responsive-table mb-2">
+  <table  class="user-table ">
+    <tr>
+      <th>Name</th>
+      <td>{{ user['user'].firstName }} {{ user['user'].lastName }}</td>
+    </tr>
+    <tr>
+      <th>E-Mail</th>
+      <td>{{ user['user'].email }}</td>
+    </tr>
+    <tr>
+      <th>City</th>
       <td>{{ user['user'].city }}</td>
     </tr>
   </table>

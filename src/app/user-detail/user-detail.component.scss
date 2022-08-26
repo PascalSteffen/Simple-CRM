@@ -12,6 +12,10 @@
     }
 }
 
+.user-detail-header-container {
+    display: flex;
+}
+
 .user-datails {
     height: 100px;
     display: flex;
@@ -29,4 +33,20 @@
     position: absolute;
     right: 0%;
     top: 5%;
+}
+
+@media(max-width: 600px) {
+    .user-detail-header-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user-datails {
+        margin: 0;
+        word-break: break-all;
+    }
+
+    mat-form-field {
+        width: 100% !important;
+    }
 }

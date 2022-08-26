@@ -56,6 +56,31 @@
     }
 }
 
+.toggle-icon-responsive {
+    display: none;
+}
+
 .router-container {
     padding: 16px 56px;
+}
+
+@media (max-width: 600px) {
+    .logo-container {
+        height: 56px;
+    }
+}
+
+
+@media (max-width: 475px) {
+    .toggle-icon-responsive {
+        display: unset;
+    }
+
+    .sidenav-design {
+        width: 100%;
+    }
+
+    .logo-container {
+        justify-content: space-between;
+    }
 }
