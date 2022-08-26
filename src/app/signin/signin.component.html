@@ -1,0 +1,29 @@
+<mat-card *ngIf="!authService.isLoggedIn" class="signin-container-child">
+  <h3>Sign In</h3>
+  <form [formGroup]="reactiveForm" class="signin-container" action="">
+
+    <div class="mb-2">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input type="email" [email]="true" matInput placeholder="pat@example.com" formControlName="email" #userName
+          required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mb-2">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" #userPassword required>
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <!-- Calling SignIn Api from AuthService -->
+    <button  type="submit" [disabled]="reactiveForm.invalid" class="mb-2 inactive-btn"
+      (click)="authService.SignIn(userName.value, userPassword.value)" mat-stroked-button color="primary">Log
+      In</button>
+  </form>
+  <button class="btn-style" routerLink="/forgot-password" mat-stroked-button>Forgot Password</button>
+</mat-card>

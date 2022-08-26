@@ -31,6 +31,14 @@ import { EditUserHeaderDialogComponent } from './edit-user-header-dialog/edit-us
 import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { SigninComponent } from './signin/signin.component';
+import { AuthService } from "../app/shared/services/auth.service";
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HeaderComponent } from './header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -42,8 +50,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     EditUserDialogComponent,
     EditUserHeaderDialogComponent,
     DeleteUserDialogComponent,
+    SigninComponent,
+    ForgotPasswordComponent,
+    HeaderComponent,
   ],
   imports: [
+    MatSnackBarModule,
     BrowserModule,
     ReactiveFormsModule,
     MatMenuModule,
@@ -65,8 +77,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

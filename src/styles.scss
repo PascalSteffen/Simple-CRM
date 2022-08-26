@@ -35,5 +35,9 @@ body {
     padding: 0;
 }
 
+.mb-2 {
+    margin-bottom: 2rem;
+} 
+
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
