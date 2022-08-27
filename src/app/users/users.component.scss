@@ -3,10 +3,6 @@
     align-items: center;
     justify-content: center;
 
-    mat-form-field-flex {
-        padding: 0px !important;
-    }
-
     mat-icon {
         font-size: 25px !important;
     }
@@ -21,8 +17,13 @@
     }
 }
 
-::ng-deep .search-field-container .mat-form-field-flex {
-    padding: 0.2em 1em !important;
+
+::ng-deep {
+
+    .mat-form-field-flex {
+        padding: 0.2em 1em !important;
+    }
+
 }
 
 .btn-position {
@@ -83,7 +84,6 @@ mat-card {
     }
 
 }
-
 
 
 @media(min-width: 601px) {

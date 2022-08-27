@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { collectionData, deleteDoc, doc, Firestore } from '@angular/fire/firestore';
+import { collectionData, Firestore } from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { collection } from '@firebase/firestore';

@@ -37,12 +37,6 @@ body {
 
 .mb-2 {
     margin-bottom: 2rem;
-} 
-
-@media(max-width: 600px) {
-    .router-container {
-        padding: 16px 16px !important;
-    }
 }
 
 
@@ -58,7 +52,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(63,81,181);
+    background: rgb(63, 81, 181);
 }
 
 /* Handle on hover */

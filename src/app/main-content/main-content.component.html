@@ -5,6 +5,9 @@
       <mat-icon class="menu-icon toggle-icon-responsive" (click)="drawer.toggle()">menu</mat-icon>
     </div>
 
+    <div>
+
+    </div>
     <ul class="menu-items">
       <li routerLink="/dashboard">
         <mat-icon class="list-design">dashboard</mat-icon>Dashboard
@@ -18,7 +21,7 @@
       <li routerLink="/imprint">
         <mat-icon>description</mat-icon>Imprint
       </li>
-      <li routerLink="/signin" (click)="authService.SignOut()">
+      <li class="signOut-design" routerLink="/signin" (click)="authService.SignOut()">
         <mat-icon>logout</mat-icon>Log out
       </li>
     </ul>

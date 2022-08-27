@@ -43,6 +43,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -14,10 +14,10 @@ export class EditUserHeaderDialogComponent implements OnInit {
   loading = false;
   user: User = new User();
   userId: string;
-
+  birthDate: Date;
   constructor(private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) { }
 
-  
+
   ngOnInit(): void {
   }
 
@@ -28,6 +28,7 @@ export class EditUserHeaderDialogComponent implements OnInit {
    */
   async updateUser() {
     this.loading = true;
+    this.user.birthday = this.birthDate.getTime();
     const coll = collection(this.firestore, 'users');
     const docRef = doc(coll, this.userId);
     await updateDoc(docRef, { user: this.user.toJSON() }).then(() => {
@@ -35,5 +36,5 @@ export class EditUserHeaderDialogComponent implements OnInit {
       this.dialogRef.close();
     });
   }
-  
+
 }

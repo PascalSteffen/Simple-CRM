@@ -9,7 +9,8 @@
         <img src="../../assets/img/profil-placeholder.png" alt="">
         <div class="user-datails">
             <h2>{{ user.firstName }} {{ user.lastName }}</h2>
-            <span>{{ user.email }}</span>
+            <span class="mt-1">{{ user.email }}</span>
+            <span class="mt-1">Date of Birth: {{ user.birthday | date:'dd/MM/yyyy' }}</span>
         </div>
     </div>
 </mat-card>
