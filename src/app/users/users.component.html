@@ -14,7 +14,7 @@
         <mat-icon>manage_accounts</mat-icon>
         <mat-menu #editDetails="matMenu">
             <button [routerLink]="user.userId" mat-menu-item>Details</button>
-            <button (click)="deleteUserDialog()" mat-menu-item>Delete User</button>
+            <button (click)="deleteUserDialog(user)" mat-menu-item>Delete User</button>
         </mat-menu>
     </button>
       <mat-icon></mat-icon>

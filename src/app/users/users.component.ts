@@ -27,18 +27,19 @@ export class UsersComponent implements OnInit {
     this.users$ = collectionData(coll, {idField: "userId"});
     this.users$.subscribe((newUser) => {
       this.allUsers = newUser;
-      //console.log(this.allUsers);
     })
   }
+
 
 
   openDialog() {
     this.dialog.open(AddUserDialogComponent);
   }
 
-  deleteUserDialog() {
-    const dialogRef = this.dialog.open(DeleteUserDialogComponent);
-    dialogRef.componentInstance.userId = this.userId; // new User(this.user.toJSON()); Copies the object for editing / passes userid into the compenent
+
+  deleteUserDialog(i: any) {
+      const dialogRef = this.dialog.open(DeleteUserDialogComponent);
+      dialogRef.componentInstance.userId = i['userId']; // new User(this.user.toJSON()); Copies the object for editing / passes userid into the compenent
   }
 
 }

@@ -51,13 +51,18 @@ export class AuthService {
         this.afAuth.authState.subscribe((user) => {
           if (user) {
             this.router.navigate(['dashboard']);
-            this.alert('Login sucessfully')
+            this.alert('Login sucessfully', 3000)
           }
         });
       })
       .catch((error) => {
-        this.alert('Email or password are incorrect.')
+        this.alert('Email or password are incorrect. Or too many login failures. Please try again later or change your password.', 6000)
+        setTimeout(() => {
+          console.clear();
+        }, 0.1);
+
       });
+
   }
 
 
@@ -71,7 +76,7 @@ export class AuthService {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
+        this.alert('Password reset email sent, check your inbox.', 3000)
       })
     /* .catch((error) => {
       window.alert(error);
@@ -140,7 +145,7 @@ export class AuthService {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('CurrentUser');
       this.router.navigate(['signin']);
-      this.alert('Logout sucessfully')
+      this.alert('Logout sucessfully', 3000)
     });
   }
 
@@ -150,9 +155,9 @@ export class AuthService {
    * @param message 
    * 
    */
-  alert(message: string) {
+  alert(message: string, time: number) {
     this._snackBar.open(message, '', {
-      duration: 3000
+      duration: time
     });
   }
 
