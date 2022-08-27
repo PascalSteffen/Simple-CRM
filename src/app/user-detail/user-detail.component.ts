@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Firestore, doc, getDoc, collectionData, onSnapshot } from '@angular/fire/firestore';
+import { Component, OnInit, Output } from '@angular/core';
+import { Firestore, doc, getDoc, onSnapshot } from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { collection } from '@firebase/firestore';
-import { Observable } from 'rxjs';
 import { User } from 'src/models/user.class';
-import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dialog.component';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
 import { EditUserHeaderDialogComponent } from '../edit-user-header-dialog/edit-user-header-dialog.component';
 
@@ -72,12 +70,6 @@ export class UserDetailComponent implements OnInit {
   openUserHeaderDialog() {
     const dialogRef = this.dialog.open(EditUserHeaderDialogComponent);
     dialogRef.componentInstance.user = new User(this.user.toJSON()); // new User(this.user.toJSON()); Copies the object for editing / passes user into the compenent
-    dialogRef.componentInstance.userId = this.userId; // new User(this.user.toJSON()); Copies the object for editing / passes userid into the compenent
-  }
-
-
-  deleteUserDialog() {
-    const dialogRef = this.dialog.open(DeleteUserDialogComponent);
     dialogRef.componentInstance.userId = this.userId; // new User(this.user.toJSON()); Copies the object for editing / passes userid into the compenent
   }
 

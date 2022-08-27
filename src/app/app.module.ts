@@ -37,7 +37,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HeaderComponent } from './header/header.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { MainContentComponent } from './main-content/main-content.component';
@@ -55,7 +54,6 @@ import { MainContentComponent } from './main-content/main-content.component';
     DeleteUserDialogComponent,
     SigninComponent,
     ForgotPasswordComponent,
-    HeaderComponent,
     ImprintComponent,
     PrivacyComponent,
     MainContentComponent,

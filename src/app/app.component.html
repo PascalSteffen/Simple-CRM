@@ -1,4 +1,4 @@
-<app-header *ngIf="authService.isLoggedIn"></app-header>
+<app-main-content *ngIf="authService.isLoggedIn"></app-main-content>
 <div *ngIf="!authService.isLoggedIn" class="background-img">
   <div class="flex-center">
     <router-outlet></router-outlet>
