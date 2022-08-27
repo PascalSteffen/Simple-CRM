@@ -14,6 +14,7 @@ import { DeleteUserDialogComponent } from '../delete-user-dialog/delete-user-dia
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  searchText;
   user = new User();
   users$: Observable<any>;
   allUsers: any

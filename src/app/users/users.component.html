@@ -1,4 +1,8 @@
 <!-- Desktop-Table -->
+<mat-form-field appearance="fill">
+  <mat-label>Search</mat-label>
+  <input matInput type="text" name="search" [(ngModel)]="searchText" autocomplete="off">
+</mat-form-field>
 <mat-card class="desktop-table">
   <table class="user-table">
     <tr>
@@ -6,7 +10,7 @@
       <th>E-Mail</th>
       <th>City</th>
     </tr>
-    <tr *ngFor="let user of allUsers" >
+    <tr *ngFor="let user of allUsers | searchFilter:searchText" >
       <td>{{ user['user'].firstName }} {{ user['user'].lastName }}</td>
       <td>{{ user['user'].email }}</td>
       <td>{{ user['user'].city }}</td>
