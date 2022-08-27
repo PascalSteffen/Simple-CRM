@@ -21,7 +21,7 @@
       </mat-form-field>
     </div>
     <!-- Calling SignIn Api from AuthService -->
-    <button  type="submit" [disabled]="reactiveForm.invalid" class="mb-2 inactive-btn"
+    <button type="submit" [disabled]="reactiveForm.invalid" class="mb-2 inactive-btn"
       (click)="authService.SignIn(userName.value, userPassword.value)" mat-stroked-button color="primary">Log
       In</button>
   </form>

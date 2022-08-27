@@ -1,8 +1,12 @@
 <!-- Desktop-Table -->
-<mat-form-field appearance="fill">
-  <mat-label>Search</mat-label>
-  <input matInput type="text" name="search" [(ngModel)]="searchText" autocomplete="off">
-</mat-form-field>
+<div class="search-field-container">
+  <mat-form-field appearance="fill">
+    <mat-label>
+      <mat-icon class="me-2">search</mat-icon> Search Database
+    </mat-label>
+    <input matInput type="text" name="search" [(ngModel)]="searchText" autocomplete="off">
+  </mat-form-field>
+</div>
 <mat-card class="desktop-table">
   <table class="user-table">
     <tr>
@@ -10,17 +14,17 @@
       <th>E-Mail</th>
       <th>City</th>
     </tr>
-    <tr *ngFor="let user of allUsers | searchFilter:searchText" >
+    <tr *ngFor="let user of allUsers | searchFilter:searchText">
       <td>{{ user['user'].firstName }} {{ user['user'].lastName }}</td>
       <td>{{ user['user'].email }}</td>
       <td>{{ user['user'].city }}</td>
-      <button [matMenuTriggerFor]="editDetails" mat-icon-button class="">
+      <button [matMenuTriggerFor]="editDetails" mat-icon-button class="user-settings">
         <mat-icon>manage_accounts</mat-icon>
         <mat-menu #editDetails="matMenu">
-            <button [routerLink]="user.userId" mat-menu-item>Details</button>
-            <button (click)="deleteUserDialog(user)" mat-menu-item>Delete User</button>
+          <button [routerLink]="user.userId" mat-menu-item>Details</button>
+          <button (click)="deleteUserDialog(user)" mat-menu-item>Delete User</button>
         </mat-menu>
-    </button>
+      </button>
       <mat-icon></mat-icon>
     </tr>
   </table>
@@ -28,11 +32,18 @@
 
 
 <!-- Responsive-Table -->
-<mat-card *ngFor="let user of allUsers" [routerLink]="user.userId" class="responsive-table mb-2">
+<mat-card *ngFor="let user of allUsers | searchFilter:searchText" class="responsive-table mb-2">
   <table class="user-table ">
     <tr>
       <th>Name</th>
       <td>{{ user['user'].firstName }} {{ user['user'].lastName }}</td>
+      <button [matMenuTriggerFor]="editDetails" mat-icon-button class="user-settings">
+        <mat-icon>manage_accounts</mat-icon>
+        <mat-menu #editDetails="matMenu">
+          <button [routerLink]="user.userId" mat-menu-item>Details</button>
+          <button (click)="deleteUserDialog(user)" mat-menu-item>Delete User</button>
+        </mat-menu>
+      </button>
     </tr>
     <tr>
       <th>E-Mail</th>
@@ -45,6 +56,6 @@
   </table>
 </mat-card>
 
-<button (click)="openDialog()" class="btn-position" mat-fab color="primary" matTooltip="Add user">
+<button (click)="openDialog()" class="btn-position" mat-fab color="primary" matTooltip="Add User">
   <mat-icon>add</mat-icon>
 </button>

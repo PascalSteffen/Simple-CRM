@@ -4,4 +4,4 @@ export interface CurrentUser {
     displayName: string;
     photoURL: string;
     emailVerified: boolean;
- }
+}

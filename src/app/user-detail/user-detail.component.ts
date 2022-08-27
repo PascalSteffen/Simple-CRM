@@ -63,14 +63,14 @@ export class UserDetailComponent implements OnInit {
   openAddressDialog() {
     const dialogRef = this.dialog.open(EditUserDialogComponent);
     dialogRef.componentInstance.user = new User(this.user.toJSON()); // new User(this.user.toJSON()); Copies the object for editing / passes user into the compenent
-    dialogRef.componentInstance.userId = this.userId; // new User(this.user.toJSON()); Copies the object for editing / passes userid into the compenent
+    dialogRef.componentInstance.userId = this.userId; // userId: any; Copies the object for editing / passes userid into the compenent
   }
 
 
   openUserHeaderDialog() {
     const dialogRef = this.dialog.open(EditUserHeaderDialogComponent);
     dialogRef.componentInstance.user = new User(this.user.toJSON()); // new User(this.user.toJSON()); Copies the object for editing / passes user into the compenent
-    dialogRef.componentInstance.userId = this.userId; // new User(this.user.toJSON()); Copies the object for editing / passes userid into the compenent
+    dialogRef.componentInstance.userId = this.userId; // userId: any; Copies the object for editing / passes userid into the compenent
   }
 
 }

@@ -28,7 +28,7 @@ export class SigninComponent implements OnInit {
     return this.password.hasError('password') ? 'Not a valid password' : '';
   }
 
-  
+
   hide = true;
   constructor(public authService: AuthService, private builder: FormBuilder) { }
 

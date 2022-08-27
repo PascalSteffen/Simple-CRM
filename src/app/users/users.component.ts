@@ -19,18 +19,18 @@ export class UsersComponent implements OnInit {
   users$: Observable<any>;
   allUsers: any
   userId: any;
-  constructor(private route: ActivatedRoute, public dialog: MatDialog, private firestore: Firestore) { 
+  constructor(private route: ActivatedRoute, public dialog: MatDialog, private firestore: Firestore) {
 
   }
 
+
   ngOnInit(): void {
     const coll = collection(this.firestore, 'users');
-    this.users$ = collectionData(coll, {idField: "userId"});
+    this.users$ = collectionData(coll, { idField: "userId" });
     this.users$.subscribe((newUser) => {
       this.allUsers = newUser;
     })
   }
-
 
 
   openDialog() {
@@ -38,9 +38,13 @@ export class UsersComponent implements OnInit {
   }
 
 
+  /**
+   * give the DeleteUserComponent the Id from the current user.
+   * @param i 
+   */
   deleteUserDialog(i: any) {
-      const dialogRef = this.dialog.open(DeleteUserDialogComponent);
-      dialogRef.componentInstance.userId = i['userId']; // new User(this.user.toJSON()); Copies the object for editing / passes userid into the compenent
+    const dialogRef = this.dialog.open(DeleteUserDialogComponent);
+    dialogRef.componentInstance.userId = i['userId']; // i['userId'] Copies the object for editing / passes userid into the compenent
   }
 
 }
