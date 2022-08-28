@@ -67,7 +67,6 @@
     input.mat-input-element {
         color: white !important;
         caret-color: white !important;
-
     }
 
     /* active Border */
@@ -86,4 +85,11 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: #fff !important;
+}
+
+
+@media (max-width: 300px) {
+    .signin-container-child {
+        width: 260px;
+    }
 }

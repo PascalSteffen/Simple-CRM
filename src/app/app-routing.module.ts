@@ -6,14 +6,14 @@ import { SigninComponent } from './signin/signin.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component';
 import { AuthGuard } from './shared/guard/auth.guard';
-import { AuthReverseGuard } from './shared/guard/reverse-auth.guard';
 import { ImprintComponent } from './imprint/imprint.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { ReverseauthGuard } from './shared/guard/reverseauth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
-  { path: 'signin', component: SigninComponent, canActivate: [AuthReverseGuard] },
-  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [AuthReverseGuard] },
+  { path: 'signin', component: SigninComponent, canActivate: [ReverseauthGuard]},
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [ReverseauthGuard]},
 
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },

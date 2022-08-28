@@ -18,7 +18,7 @@ export class AuthService {
     public ngZone: NgZone,
     private _snackBar: MatSnackBar) {
 
-      
+
     /**
      * Saving user data in localstorage when 
      * logged in and setting up null when logged out
@@ -50,8 +50,9 @@ export class AuthService {
         this.SetUserData(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
+            // window.location.href="/dasboard";
             this.router.navigate(['dashboard']);
-            this.alert('Login sucessfully', 3000)
+            location.reload();
           }
         });
       })
@@ -105,7 +106,9 @@ export class AuthService {
       .signInWithPopup(provider)
       .then((result) => {
         this.router.navigate(['dashboard']);
+        // window.location.href="/dasboard";
         this.SetUserData(result.user);
+
       })
     /* .catch((error) => {
       window.alert(error);

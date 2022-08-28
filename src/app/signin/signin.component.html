@@ -25,5 +25,12 @@
       (click)="authService.SignIn(userName.value, userPassword.value)" mat-stroked-button color="primary">Log
       In</button>
   </form>
-  <button class="btn-style" routerLink="/forgot-password" mat-stroked-button>Forgot Password</button>
+  <div>
+    <button class="mb-2 inactive-btn me-3"
+      (click)="authService.SignIn('pascalsteffenbusiness@hotmail.com', 'TestAccount21')" mat-stroked-button
+      color="primary">
+      <mat-icon>login</mat-icon>
+    </button>
+    <button class="btn-style" routerLink="/forgot-password" mat-stroked-button>Forgot Password</button>
+  </div>
 </mat-card>

@@ -42,7 +42,9 @@ export class UserDetailComponent implements OnInit {
   updateUser() {
     const coll = collection(this.firestore, 'users');
     onSnapshot(doc(coll, this.userId), (doc) => {
-      this.user = new User(doc.data()['user'])
+      if(this.userId) {
+        this.user = new User(doc.data()['user'])
+      }
     });
 
   }
