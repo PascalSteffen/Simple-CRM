@@ -52,7 +52,7 @@ export class AuthService {
           if (user) {
             // window.location.href="/dasboard";
             this.router.navigate(['dashboard']);
-            location.reload();
+            // location.reload();
           }
         });
       })
