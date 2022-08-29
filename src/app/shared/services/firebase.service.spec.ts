@@ -5,24 +5,25 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { environment } from 'src/environments/environment';
 
-import { ReverseAuthService } from './reverse-auth.service';
+import { FirebaseService } from './firebase.service';
 
-describe('ReverseAuthService', () => {
-  let service: ReverseAuthService;
+describe('FirebaseService', () => {
+  let service: FirebaseService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [provideFirebaseApp(() => initializeApp(environment.firebase)),
-      provideAuth(() => getAuth()),
-      provideFirestore(() => getFirestore()),
+      imports: [MatDialogModule, provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideAuth(() => getAuth()),
+        provideFirestore(() => getFirestore()),
         AngularFireAuthModule,
-      AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule],
+        AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule],
       providers: [AngularFirestore]
     });
-    service = TestBed.inject(ReverseAuthService);
+    service = TestBed.inject(FirebaseService);
   });
 
   it('should be created', () => {

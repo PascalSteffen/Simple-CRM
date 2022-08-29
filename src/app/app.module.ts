@@ -40,7 +40,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ImprintComponent } from './imprint/imprint.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { MainContentComponent } from './main-content/main-content.component';
-import { SearchFilterPipe } from './search-filter.pipe';
+import { SearchFilterPipe } from './shared/pipes/search-filter.pipe';
 
 
 

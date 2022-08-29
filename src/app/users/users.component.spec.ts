@@ -4,7 +4,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { SearchFilterPipe } from '../search-filter.pipe';
+import { SearchFilterPipe } from '../shared/pipes/search-filter.pipe';
 
 import { UsersComponent } from './users.component';
 

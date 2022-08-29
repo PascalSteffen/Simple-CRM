@@ -12,12 +12,12 @@ import { ReverseauthGuard } from './shared/guard/reverseauth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
-  { path: 'signin', component: SigninComponent, canActivate: [ReverseauthGuard]},
-  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [ReverseauthGuard]},
+  { path: 'signin', component: SigninComponent, canActivate: [ReverseauthGuard] },
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [ReverseauthGuard] },
 
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
-  { path: 'users/:id', component: UserDetailComponent,canActivate: [AuthGuard] },
+  { path: 'users/:id', component: UserDetailComponent, canActivate: [AuthGuard] },
   { path: 'imprint', component: ImprintComponent, canActivate: [AuthGuard] },
   { path: 'privacy', component: PrivacyComponent, canActivate: [AuthGuard] },
 ];
