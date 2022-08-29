@@ -24,9 +24,9 @@ export class EditUserHeaderDialogComponent implements OnInit {
 
 
   /**
-   * update the Userinformation.
-   * 
-   */
+  * update the header user information.
+  * 
+  */
   async updateUser() {
     this.loading = true;
     this.user.birthday = this.birthDate.getTime();
@@ -35,7 +35,7 @@ export class EditUserHeaderDialogComponent implements OnInit {
     await updateDoc(docRef, { user: this.user.toJSON() }).then(() => {
       this.loading = false;
       this.dialogRef.close();
-      this.authService.alert('User edit successfully', 3000);
+      this.authService.alert('User edit successfully.', 3000);
     });
   }
 

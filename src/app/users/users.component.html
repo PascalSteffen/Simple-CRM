@@ -14,7 +14,7 @@
       <th>E-Mail</th>
       <th>City</th>
     </tr>
-    <tr *ngFor="let user of firebaseService.allUsers | searchFilter:searchText">
+    <tr *ngFor="let user of allUsers | searchFilter:searchText">
       <td>{{ user['user'].firstName }} {{ user['user'].lastName }}</td>
       <td>{{ user['user'].email }}</td>
       <td>{{ user['user'].city }}</td>
@@ -22,7 +22,7 @@
         <mat-icon>manage_accounts</mat-icon>
         <mat-menu #editDetails="matMenu">
           <button [routerLink]="user.userId" mat-menu-item>Details</button>
-          <button (click)="firebaseService.deleteUserDialog(user)" mat-menu-item>Delete User</button>
+          <button (click)="deleteUserDialog(user)" mat-menu-item>Delete User</button>
         </mat-menu>
       </button>
       <mat-icon></mat-icon>
@@ -32,7 +32,7 @@
 
 
 <!-- Responsive-Table -->
-<mat-card *ngFor="let user of firebaseService.allUsers | searchFilter:searchText" class="responsive-table mb-2">
+<mat-card *ngFor="let user of allUsers | searchFilter:searchText" class="responsive-table mb-2">
   <table class="user-table ">
     <tr>
       <th>Name</th>
@@ -41,7 +41,7 @@
         <mat-icon>manage_accounts</mat-icon>
         <mat-menu #editDetails="matMenu">
           <button [routerLink]="user.userId" mat-menu-item>Details</button>
-          <button (click)="firebaseService.deleteUserDialog(user)" mat-menu-item>Delete User</button>
+          <button (click)="deleteUserDialog(user)" mat-menu-item>Delete User</button>
         </mat-menu>
       </button>
     </tr>
@@ -56,6 +56,6 @@
   </table>
 </mat-card>
 
-<button (click)="openDialog()" class="btn-position" mat-fab matTooltip="Add User">
+<button (click)="openDialog()" class="btn-position" mat-fab color="primary" matTooltip="Add User">
   <mat-icon>add</mat-icon>
 </button>

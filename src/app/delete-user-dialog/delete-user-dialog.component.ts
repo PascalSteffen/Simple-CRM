@@ -21,9 +21,9 @@ export class DeleteUserDialogComponent implements OnInit {
 
 
   /**
-   * delete the current user.
-   * 
-   */
+  * delete the current user.
+  * 
+  */
   async deleteUser() {
     this.loading = true;
     const coll = collection(this.firestore, 'users');
@@ -32,7 +32,7 @@ export class DeleteUserDialogComponent implements OnInit {
       this.router.navigate(['users']);
       this.loading = false;
       this.dialogRef.close();
-      this.authService.alert('User delete successfully', 3000);
+      this.authService.alert('User removed successfully.', 3000);
     });
   }
 }

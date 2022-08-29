@@ -24,9 +24,9 @@ export class AddUserDialogComponent implements OnInit {
 
 
   /**
-   * save a new User to the DB.
-   * 
-   */
+  * save a new User to the DB.
+  * 
+  */
   saveUser() {
     this.loading = true;
     this.user.birthday = this.birthDate.getTime();
@@ -34,7 +34,7 @@ export class AddUserDialogComponent implements OnInit {
     addDoc(coll, { user: this.user.toJSON() }).then(() => {
       this.loading = false;
       this.dialogRef.close();
-      this.authService.alert('User added successfully', 3000);
+      this.authService.alert('User added successfully.', 3000)
     });
   }
 

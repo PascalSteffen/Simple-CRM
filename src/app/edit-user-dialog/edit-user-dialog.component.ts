@@ -22,9 +22,9 @@ export class EditUserDialogComponent implements OnInit {
   }
 
   /**
-   * update the Userinformation.
-   * 
-   */
+  * update the Userinformation.
+  * 
+  */
   async updateUser() {
     this.loading = true;
     const coll = collection(this.firestore, 'users');
@@ -32,7 +32,7 @@ export class EditUserDialogComponent implements OnInit {
     await updateDoc(docRef, { user: this.user.toJSON() }).then(() => {
       this.loading = false;
       this.dialogRef.close();
-      this.authService.alert('User edit successfully', 3000);
+      this.authService.alert('User edit successfully.', 3000);
     });
   }
 }
