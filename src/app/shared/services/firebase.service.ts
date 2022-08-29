@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { collection, collectionData, Firestore} from '@angular/fire/firestore';
+import { collection, collectionData, doc, Firestore, getDoc, onSnapshot} from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -28,6 +28,32 @@ export class FirebaseService {
     })
   }
   
+
+    /**
+  * get the current User
+  * 
+  */
+     async getUser(userId) {
+      const coll = collection(this.firestore, 'users');
+      const docRef = doc(coll, userId);
+      const docSnap = await getDoc(docRef)
+      this.user = new User(docSnap.data()['user']);
+    }
+  
+  
+    /**
+     * update the User on Board.
+     * 
+     */
+    updateUser(userId) {
+      const coll = collection(this.firestore, 'users');
+      if (userId == true) {
+        onSnapshot(doc(coll, userId), (doc) => {
+          this.user = new User(doc.data()['user'])
+        });
+      }
+  
+    }
 
   /**
  * give the DeleteUserComponent the Id from the current user.

@@ -29,37 +29,14 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(async (paramMap) => {
       this.userId = paramMap.get('id');
-      await this.getUser();
-      this.updateUser();
+      console.log(this.userId)
+      await this.firebaseService.getUser(this.userId);
+      this.firebaseService.updateUser(this.userId);
     })
   }
 
 
-  /**
-  * get the current User
-  * 
-  */
-  async getUser() {
-    const coll = collection(this.firestore, 'users');
-    const docRef = doc(coll, this.userId);
-    const docSnap = await getDoc(docRef)
-    this.user = new User(docSnap.data()['user']);
-  }
 
-
-  /**
-   * update the User on Board.
-   * 
-   */
-  updateUser() {
-    const coll = collection(this.firestore, 'users');
-    if (this.userId == true) {
-      onSnapshot(doc(coll, this.userId), (doc) => {
-        this.user = new User(doc.data()['user'])
-      });
-    }
-
-  }
 
 
   openAddressDialog() {
