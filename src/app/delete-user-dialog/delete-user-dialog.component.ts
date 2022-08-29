@@ -3,6 +3,7 @@ import { collection, deleteDoc, doc, Firestore, getDoc } from '@angular/fire/fir
 import { MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/models/user.class';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-delete-user-dialog',
@@ -13,7 +14,7 @@ export class DeleteUserDialogComponent implements OnInit {
   user = new User();
   userId: any;
   loading = false;
-  constructor(public router: Router, private route: ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<DeleteUserDialogComponent>) { }
+  constructor(public authService: AuthService, public router: Router, private route: ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<DeleteUserDialogComponent>) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +32,7 @@ export class DeleteUserDialogComponent implements OnInit {
       this.router.navigate(['users']);
       this.loading = false;
       this.dialogRef.close();
+      this.authService.alert('User delete successfully', 3000);
     });
   }
 }

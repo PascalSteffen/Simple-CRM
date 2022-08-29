@@ -3,6 +3,7 @@ import { collection, doc, Firestore, updateDoc } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/models/user.class';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-edit-user-dialog',
@@ -13,7 +14,7 @@ export class EditUserDialogComponent implements OnInit {
   loading = false;
   user: User = new User();
   userId: string;
-  constructor(private route: ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) {
+  constructor(public authService: AuthService, private route: ActivatedRoute, private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) {
   }
 
   ngOnInit() {
@@ -31,6 +32,7 @@ export class EditUserDialogComponent implements OnInit {
     await updateDoc(docRef, { user: this.user.toJSON() }).then(() => {
       this.loading = false;
       this.dialogRef.close();
+      this.authService.alert('User edit successfully', 3000);
     });
   }
 }

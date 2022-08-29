@@ -3,6 +3,7 @@ import { collection, doc, Firestore, updateDoc } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 import { EditUserDialogComponent } from "../edit-user-dialog/edit-user-dialog.component";
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-edit-user-header-dialog',
@@ -15,7 +16,7 @@ export class EditUserHeaderDialogComponent implements OnInit {
   user: User = new User();
   userId: string;
   birthDate: Date;
-  constructor(private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) { }
+  constructor(public authService: AuthService, private firestore: Firestore, public dialogRef: MatDialogRef<EditUserDialogComponent>) { }
 
 
   ngOnInit(): void {
@@ -34,6 +35,7 @@ export class EditUserHeaderDialogComponent implements OnInit {
     await updateDoc(docRef, { user: this.user.toJSON() }).then(() => {
       this.loading = false;
       this.dialogRef.close();
+      this.authService.alert('User edit successfully', 3000);
     });
   }
 

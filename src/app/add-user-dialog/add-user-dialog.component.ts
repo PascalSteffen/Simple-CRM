@@ -4,6 +4,7 @@ import { Firestore, collection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { addDoc } from '@firebase/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-add-user-dialog',
@@ -15,7 +16,7 @@ export class AddUserDialogComponent implements OnInit {
   user = new User();
   birthDate: Date;
   users$: Observable<any>;
-  constructor(private firestore: Firestore, public dialogRef: MatDialogRef<AddUserDialogComponent>) { }
+  constructor(public authService: AuthService, private firestore: Firestore, public dialogRef: MatDialogRef<AddUserDialogComponent>) { }
 
 
   ngOnInit(): void {
@@ -33,6 +34,7 @@ export class AddUserDialogComponent implements OnInit {
     addDoc(coll, { user: this.user.toJSON() }).then(() => {
       this.loading = false;
       this.dialogRef.close();
+      this.authService.alert('User added successfully', 3000);
     });
   }
 
