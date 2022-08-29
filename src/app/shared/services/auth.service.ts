@@ -52,6 +52,7 @@ export class AuthService {
           if (user) {
             // window.location.href="/dasboard";
             this.router.navigate(['dashboard']);
+            this.alert('Login sucessfully.', 3000);
           }
         });
       })
@@ -147,7 +148,7 @@ export class AuthService {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('CurrentUser');
       this.router.navigate(['signin']);
-      this.alert('Logout sucessfully', 3000)
+      this.alert('Logout sucessfully.', 3000);
     });
   }
 
