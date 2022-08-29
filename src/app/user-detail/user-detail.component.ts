@@ -30,7 +30,7 @@ export class UserDetailComponent implements OnInit {
     this.route.paramMap.subscribe(async (paramMap) => {
       this.userId = paramMap.get('id');
       await this.getUser();
-      this.updateUser()
+      this.updateUser();
     })
   }
 
@@ -53,9 +53,12 @@ export class UserDetailComponent implements OnInit {
    */
   updateUser() {
     const coll = collection(this.firestore, 'users');
-    onSnapshot(doc(coll, this.userId), (doc) => {
-      this.user = new User(doc.data()['user'])
-    });
+    if (this.userId == true) {
+      onSnapshot(doc(coll, this.userId), (doc) => {
+        this.user = new User(doc.data()['user'])
+      });
+    }
+
   }
 
 
