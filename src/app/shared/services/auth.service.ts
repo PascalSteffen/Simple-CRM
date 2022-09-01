@@ -57,9 +57,10 @@ export class AuthService {
         });
       })
       .catch((error) => {
+        console.error(error);
         this.alert('Email or password are incorrect. Or too many login failures. Please try again later or change your password.', 6000)
         setTimeout(() => {
-          console.clear();
+          // console.clear();
         }, 0.1);
 
       });

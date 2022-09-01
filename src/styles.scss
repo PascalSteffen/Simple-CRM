@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'material-icons/iconfont/material-icons.css';
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 
 html,
 body {
@@ -59,6 +62,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #131111;
 }
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
