@@ -23,7 +23,7 @@ export class EditUserDialogComponent implements OnInit {
 
   /**
   * update the Userinformation.
-  * 
+  *
   */
   async updateUser() {
     this.loading = true;

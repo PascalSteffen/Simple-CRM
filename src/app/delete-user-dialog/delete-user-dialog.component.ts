@@ -22,7 +22,7 @@ export class DeleteUserDialogComponent implements OnInit {
 
   /**
   * delete the current user.
-  * 
+  *
   */
   async deleteUser() {
     this.loading = true;

@@ -1,127 +1,127 @@
 .search-field-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    font-size: 25px !important;
+  }
+
+  mat-form-field {
+    width: 400px;
+  }
+
+  mat-label {
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    mat-icon {
-        font-size: 25px !important;
-    }
-
-    mat-form-field {
-        width: 400px;
-    }
-
-    mat-label {
-        display: flex;
-        align-items: center;
-    }
+  }
 }
 
 .btn-position {
-    background-color: rgb(48, 48, 48) !important;
+  background-color: rgb(48, 48, 48) !important;
 }
 
 
 ::ng-deep {
 
-    .mat-form-field-flex {
-        padding: 0.2em 1em !important;
-    }
+  .mat-form-field-flex {
+    padding: 0.2em 1em !important;
+  }
 
 }
 
 .btn-position {
-    position: absolute;
-    right: 32px;
-    bottom: 32px;
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
 }
 
 mat-card {
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
 }
 
 .user-table {
-    width: 100%;
+  width: 100%;
+  text-align: start;
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    position: relative;
+
+    &:last-child {
+      border: 0;
+    }
+
+    &:first-child {
+      cursor: unset;
+
+      &:hover {
+        background-color: unset;
+      }
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  td {
+    height: 48px;
+
+    &:first-child {
+      padding-left: 16px;
+    }
+  }
+
+  th {
     text-align: start;
-    border-collapse: collapse;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    padding-bottom: 16px;
 
-    tr {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-        position: relative;
-
-        &:last-child {
-            border: 0;
-        }
-
-        &:first-child {
-            cursor: unset;
-
-            &:hover {
-                background-color: unset;
-            }
-        }
-
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
+    &:first-child {
+      padding-left: 16px;
     }
-
-    td {
-        height: 48px;
-
-        &:first-child {
-            padding-left: 16px;
-        }
-    }
-
-    th {
-        text-align: start;
-        color: rgba(0, 0, 0, 0.3);
-        font-size: 16px;
-        padding-bottom: 16px;
-
-        &:first-child {
-            padding-left: 16px;
-        }
-    }
+  }
 
 }
 
 
 @media(min-width: 601px) {
-    .responsive-table {
-        display: none;
-    }
+  .responsive-table {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
-    .desktop-table {
-        display: none;
+  .desktop-table {
+    display: none;
+  }
+
+  .user-table {
+
+    th {
+      padding: 0 16px !important;
     }
 
-    .user-table {
-
-        th {
-            padding: 0 16px !important;
-        }
-
-        td {
-            word-break: break-all;
-            padding-right: 16px;
-        }
-
+    td {
+      word-break: break-all;
+      padding-right: 16px;
     }
+
+  }
 
 }
 
 .user-settings-table {
-    position: relative;
+  position: relative;
 }
 
 .user-settings {
-    position: absolute;
-    right: 0;
-    top: 7.5%;
+  position: absolute;
+  right: 0;
+  top: 7.5%;
 }

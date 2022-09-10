@@ -1,77 +1,77 @@
 .signin-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-    img {
-        position: absolute;
+  img {
+    position: absolute;
+  }
+
+  /* Form-Input-Design */
+  ::ng-deep {
+
+    /** Overrides caret & text color **/
+    .my-form-field.mat-form-field-appearance-legacy .mat-input-element {
+      caret-color: white !important;
+      color: white !important;
     }
 
-    /* Form-Input-Design */
-    ::ng-deep {
-
-        /** Overrides caret & text color **/
-        .my-form-field.mat-form-field-appearance-legacy .mat-input-element {
-            caret-color: white !important;
-            color: white !important;
-        }
-
-        .mat-form-field-label,
-        .mat-focused {
-            /*change color of label*/
-            color: white !important;
-
-        }
-
-        /* Border */
-        .mat-form-field-appearance-outline .mat-form-field-outline,
-        .mat-form-field-outline-thick {
-            color: white !important;
-        }
-
-        /* Font color */
-        input.mat-input-element {
-            color: white !important;
-            caret-color: white !important;
-        }
-
-        /* active Border */
-        .mat-form-field-ripple {
-            background-color: white !important;
-        }
+    .mat-form-field-label,
+    .mat-focused {
+      /*change color of label*/
+      color: white !important;
 
     }
+
+    /* Border */
+    .mat-form-field-appearance-outline .mat-form-field-outline,
+    .mat-form-field-outline-thick {
+      color: white !important;
+    }
+
+    /* Font color */
+    input.mat-input-element {
+      color: white !important;
+      caret-color: white !important;
+    }
+
+    /* active Border */
+    .mat-form-field-ripple {
+      background-color: white !important;
+    }
+
+  }
 }
 
 .signin-container-child {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 300px;
-    background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+
+  button {
     color: white;
 
-    button {
-        color: white;
-
-        &:disabled {
-            border: none;
-        }
+    &:disabled {
+      border: none;
     }
+  }
 }
 
 .inactive-btn {
-    border: 1px solid transparent !important;
+  border: 1px solid transparent !important;
 
-    &:enabled {
-        border: 1px solid white !important;
-    }
+  &:enabled {
+    border: 1px solid white !important;
+  }
 }
 
 .btn-style {
-    border: 1px solid white !important;
+  border: 1px solid white !important;
 }
 
 
@@ -83,13 +83,13 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
 }
 
 
 @media (max-width: 300px) {
-    .signin-container-child {
-        width: 260px;
-    }
+  .signin-container-child {
+    width: 260px;
+  }
 }

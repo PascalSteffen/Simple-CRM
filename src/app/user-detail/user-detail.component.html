@@ -1,33 +1,33 @@
 <mat-card class="detail-header">
-    <button [matMenuTriggerFor]="UserDetailsUp" mat-icon-button class="vert-icon-design">
-        <mat-icon>more_vert</mat-icon>
-        <mat-menu #UserDetailsUp="matMenu">
-            <button (click)="openUserHeaderDialog()" mat-menu-item>Edit</button>
-        </mat-menu>
-    </button>
-    <div class="user-detail-header-container">
-        <img src="../../assets/img/profil-placeholder.png" alt="">
-        <div class="user-datails">
-            <h2>{{ user.firstName }} {{ user.lastName }}</h2>
-            <span class="mt-1">{{ user.email }}</span>
-            <span class="mt-1">Date of Birth: {{ user.birthday | date:'dd/MM/yyyy' }}</span>
-        </div>
+  <button [matMenuTriggerFor]="UserDetailsUp" mat-icon-button class="vert-icon-design">
+    <mat-icon>more_vert</mat-icon>
+    <mat-menu #UserDetailsUp="matMenu">
+      <button (click)="openUserHeaderDialog()" mat-menu-item>Edit</button>
+    </mat-menu>
+  </button>
+  <div class="user-detail-header-container">
+    <img src="../../assets/img/profil-placeholder.png" alt="">
+    <div class="user-datails">
+      <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+      <span class="mt-1">{{ user.email }}</span>
+      <span class="mt-1">Date of Birth: {{ user.birthday | date:'dd/MM/yyyy' }}</span>
     </div>
+  </div>
 </mat-card>
 
 <mat-card class="mt-32px">
-    <button [matMenuTriggerFor]="addressDetails" mat-icon-button class="vert-icon-design">
-        <mat-icon>more_vert</mat-icon>
-        <mat-menu #addressDetails="matMenu">
-            <button (click)="openAddressDialog()" mat-menu-item>Edit</button>
-        </mat-menu>
-    </button>
+  <button [matMenuTriggerFor]="addressDetails" mat-icon-button class="vert-icon-design">
+    <mat-icon>more_vert</mat-icon>
+    <mat-menu #addressDetails="matMenu">
+      <button (click)="openAddressDialog()" mat-menu-item>Edit</button>
+    </mat-menu>
+  </button>
 
-    <mat-card-title>Address</mat-card-title>
-    <mat-card-content>
-        <p>
-            {{ user.street }} <br>
-            {{ user.zipCode }} {{ user.city }}
-        </p>
-    </mat-card-content>
+  <mat-card-title>Address</mat-card-title>
+  <mat-card-content>
+    <p>
+      {{ user.street }} <br>
+      {{ user.zipCode }} {{ user.city }}
+    </p>
+  </mat-card-content>
 </mat-card>

@@ -15,14 +15,14 @@ describe('MainContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainContentComponent ],
+      declarations: [MainContentComponent],
       imports: [provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideAuth(() => getAuth()),
-        provideFirestore(() => getFirestore()),
+      provideAuth(() => getAuth()),
+      provideFirestore(() => getFirestore()),
         AngularFireAuthModule,
-        AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule]
+      AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MainContentComponent);
     component = fixture.componentInstance;

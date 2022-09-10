@@ -16,7 +16,7 @@ describe('UserDetailComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [UserDetailComponent],
       imports: [RouterModule.forRoot([]), MatDialogModule, MatMenuModule, provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideFirestore(() => getFirestore())]
+      provideFirestore(() => getFirestore())]
     })
       .compileComponents();
 

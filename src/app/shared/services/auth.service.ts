@@ -20,7 +20,7 @@ export class AuthService {
 
 
     /**
-     * Saving user data in localstorage when 
+     * Saving user data in localstorage when
      * logged in and setting up null when logged out
      */
     this.afAuth.authState.subscribe((CurrentUser) => {
@@ -38,10 +38,10 @@ export class AuthService {
 
   /**
    * sign in with email and password
-   * @param email 
-   * @param password 
-   * @returns 
-   * 
+   * @param email
+   * @param password
+   * @returns
+   *
    */
   SignIn(email: string, password: string) {
     return this.afAuth
@@ -70,9 +70,9 @@ export class AuthService {
 
   /**
    * password reset, send an Email to the User-Account.
-   * @param passwordResetEmail 
-   * @returns 
-   * 
+   * @param passwordResetEmail
+   * @returns
+   *
    */
   ForgotPassword(passwordResetEmail: string) {
     return this.afAuth
@@ -88,7 +88,7 @@ export class AuthService {
 
   /**
    * Returns true when user is looged in and email is verified
-   * 
+   *
    */
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('CurrentUser')!);
@@ -98,9 +98,9 @@ export class AuthService {
 
   /**
    * Auth logic to run auth providers
-   * @param provider 
-   * @returns 
-   * 
+   * @param provider
+   * @returns
+   *
    */
   AuthLogin(provider: any) {
     return this.afAuth
@@ -117,11 +117,11 @@ export class AuthService {
   }
 
 
-  /** 
-   * Setting up user data when sign in with username/password, 
-   * sign up with username/password and sign in with social auth  
+  /**
+   * Setting up user data when sign in with username/password,
+   * sign up with username/password and sign in with social auth
    *  provider in Firestore database using AngularFirestore + AngularFirestoreDocument service
-   * 
+   *
    */
   SetUserData(CurrentUser: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
@@ -142,8 +142,8 @@ export class AuthService {
 
   /**
    * logout function
-   * @returns 
-   * 
+   * @returns
+   *
    */
   SignOut() {
     return this.afAuth.signOut().then(() => {
@@ -156,8 +156,8 @@ export class AuthService {
 
   /**
    * alert for user-actions
-   * @param message 
-   * 
+   * @param message
+   *
    */
   alert(message: string, time: number) {
     this._snackBar.open(message, '', {

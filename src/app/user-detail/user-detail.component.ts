@@ -23,7 +23,7 @@ export class UserDetailComponent implements OnInit {
 
   /**
   * on init get the current User by the ID for the route.
-  * 
+  *
   */
   ngOnInit(): void {
     this.route.paramMap.subscribe(async (paramMap) => {
@@ -36,7 +36,7 @@ export class UserDetailComponent implements OnInit {
 
   /**
   * update the User on Board.
-  * 
+  *
   */
   updateCurrentUserBoard() {
     const coll = collection(this.firestore, 'users');
@@ -50,7 +50,7 @@ export class UserDetailComponent implements OnInit {
 
   /**
    * get the current User
-   * 
+   *
    */
   async getUser() {
     const coll = collection(this.firestore, 'users');

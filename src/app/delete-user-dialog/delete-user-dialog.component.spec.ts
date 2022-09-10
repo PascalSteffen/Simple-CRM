@@ -16,16 +16,16 @@ describe('DeleteUserDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteUserDialogComponent ],
+      declarations: [DeleteUserDialogComponent],
       imports: [MatDialogModule, RouterModule.forRoot([]), provideFirebaseApp(() => initializeApp(environment.firebase)),
-      provideFirestore(() => getFirestore()), AngularFireAuthModule,
-      AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule],
+        provideFirestore(() => getFirestore()), AngularFireAuthModule,
+        AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule],
       providers: [
-        {provide: MatDialogRef, useValue: {}},
-        {provide: MAT_DIALOG_DATA, useValue: []},
-    ]
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: [] },
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DeleteUserDialogComponent);
     component = fixture.componentInstance;

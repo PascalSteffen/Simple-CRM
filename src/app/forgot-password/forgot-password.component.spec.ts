@@ -21,9 +21,9 @@ describe('ForgotPasswordComponent', () => {
         provideFirestore(() => getFirestore()),
         AngularFireAuthModule,
         AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule],
-      declarations: [ ForgotPasswordComponent ]
+      declarations: [ForgotPasswordComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ForgotPasswordComponent);
     component = fixture.componentInstance;

@@ -34,10 +34,10 @@ export class UsersComponent implements OnInit {
     this.dialog.open(AddUserDialogComponent);
   }
 
-  
+
   /**
    * give the DeleteUserComponent the Id from the current user.
-   * @param i 
+   * @param i
    */
   deleteUserDialog(i: any) {
     const dialogRef = this.dialog.open(DeleteUserDialogComponent);

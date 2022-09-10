@@ -1,130 +1,130 @@
 ::ng-deep {
-    mat-toolbar {
-        background-color: rgb(48, 48, 48) !important;
-    }
+  mat-toolbar {
+    background-color: rgb(48, 48, 48) !important;
+  }
 }
 
 .example-sidenav-content {
-    span {
-        color: white;
-    }
+  span {
+    color: white;
+  }
 
-    .menu-icon {
-        color: white;
-    }
+  .menu-icon {
+    color: white;
+  }
 
 }
 
 .mat-drawer-container {
-    height: 100vh;
+  height: 100vh;
 }
 
 .menu-icon {
-    cursor: pointer;
-    margin-right: 1rem;
+  cursor: pointer;
+  margin-right: 1rem;
 }
 
 .sidenav-design {
-    width: 300px;
+  width: 300px;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 64px;
-    padding: 16px;
-    border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  padding: 16px;
+  border-bottom: 1px solid lightgray;
 
-    img {
-        width: 50px;
-    }
+  img {
+    width: 50px;
+  }
 }
 
 .signOut-design {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 5%;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
 }
 
 .menu-items {
-    height: calc(100% - 65px);
+  height: calc(100% - 65px);
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0;
+
+  li {
+    height: 48px;
     display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    padding: 0px;
-    margin: 0;
+    padding: 32px 16px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 225ms ease-in-out;
 
-    li {
-        height: 48px;
-        display: flex;
-        padding: 32px 16px;
-        align-items: center;
-        cursor: pointer;
-        transition: all 225ms ease-in-out;
-
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-            transition: all 225ms ease-in-out;
-        }
-
-        &:focus {
-            outline: none;
-            background-color: rgba(0, 0, 0, 0.1);
-            transition: all 225ms ease-in-out;
-        }
-
-        mat-icon {
-            margin-right: 16px;
-        }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: all 225ms ease-in-out;
     }
+
+    &:focus {
+      outline: none;
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: all 225ms ease-in-out;
+    }
+
+    mat-icon {
+      margin-right: 16px;
+    }
+  }
 }
 
 .toggle-icon-responsive {
-    display: none;
+  display: none;
 }
 
 .router-container {
-    padding: 16px 56px;
+  padding: 16px 56px;
 }
 
 
 
 @media(max-width: 950px) {
-    .toggle-icon-responsive {
-        display: unset;
-    }
+  .toggle-icon-responsive {
+    display: unset;
+  }
 
-    .sidenav-design {
-        width: 100%;
-    }
+  .sidenav-design {
+    width: 100%;
+  }
 
-    .logo-container {
-        justify-content: space-between;
-    }
+  .logo-container {
+    justify-content: space-between;
+  }
 
-    .menu-items {
-        width: 100%;
-        align-items: center;
+  .menu-items {
+    width: 100%;
+    align-items: center;
 
-        li {
-            width: 100%;
-        }
+    li {
+      width: 100%;
     }
+  }
 }
 
 @media (max-width: 600px) {
-    .logo-container {
-        height: 56px;
-    }
+  .logo-container {
+    height: 56px;
+  }
 }
 
 
 @media (max-width: 475px) {
-    .router-container {
-        padding: 16px 16px;
-    }
+  .router-container {
+    padding: 16px 16px;
+  }
 }

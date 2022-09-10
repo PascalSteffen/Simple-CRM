@@ -25,7 +25,7 @@ export class EditUserHeaderDialogComponent implements OnInit {
 
   /**
   * update the header user information.
-  * 
+  *
   */
   async updateUser() {
     this.loading = true;

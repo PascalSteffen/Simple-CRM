@@ -17,7 +17,7 @@ describe('AuthService', () => {
       imports: [provideFirebaseApp(() => initializeApp(environment.firebase)),
       provideAuth(() => getAuth()),
       provideFirestore(() => getFirestore()),
-      AngularFireAuthModule,
+        AngularFireAuthModule,
       AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule]
     });
     service = TestBed.inject(AuthService);

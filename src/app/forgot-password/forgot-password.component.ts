@@ -18,7 +18,7 @@ export class ForgotPasswordComponent implements OnInit {
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-  
+
   hide = true;
   constructor(public authService: AuthService, private builder: FormBuilder) { }
 

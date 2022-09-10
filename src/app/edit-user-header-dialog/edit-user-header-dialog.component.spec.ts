@@ -16,16 +16,16 @@ describe('EditUserHeaderDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditUserHeaderDialogComponent ],
+      declarations: [EditUserHeaderDialogComponent],
       imports: [FormsModule, MatDialogModule, provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore()), AngularFireAuthModule,
         AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule],
-        providers: [
-          {provide: MatDialogRef, useValue: {}},
-          {provide: MAT_DIALOG_DATA, useValue: []},
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: [] },
       ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(EditUserHeaderDialogComponent);
     component = fixture.componentInstance;

@@ -25,7 +25,7 @@ export class AddUserDialogComponent implements OnInit {
 
   /**
   * save a new User to the DB.
-  * 
+  *
   */
   saveUser() {
     this.loading = true;
